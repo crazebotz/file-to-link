@@ -75,7 +75,7 @@ async def private_receive_handler(c: Client, m: Message):
         except UserNotParticipant:
             await c.send_message(
                 chat_id=m.chat.id,
-                text="""𝐫𝐬𝐭 𝐛𝐮𝐲 𝐭𝐡𝐞 𝐩𝐫𝐞𝐦𝐢𝐮𝐦 𝐚𝐧𝐝 𝐉𝐨𝐢𝐧 𝐭𝐡𝐞 𝐏𝐫𝐞𝐦𝐢𝐮𝐦 𝐜𝐡𝐚𝐧𝐧𝐞𝐥. 𝐎𝐧𝐥𝐲 50𝐫𝐬/𝐦𝐨𝐧𝐭𝐡. \n\n𝐂𝐨𝐧𝐭𝐚𝐜𝐭:- [@𝐈𝐫𝐟𝐚𝐧50786](https://t.me/Irfan50786)""",
+                text="""𝐅𝐫𝐬𝐭 𝐛𝐮𝐲 𝐭𝐡𝐞 𝐩𝐫𝐞𝐦𝐢𝐮𝐦 𝐚𝐧𝐝 𝐉𝐨𝐢𝐧 𝐭𝐡𝐞 𝐏𝐫𝐞𝐦𝐢𝐮𝐦 𝐜𝐡𝐚𝐧𝐧𝐞𝐥. 𝐎𝐧𝐥𝐲 50𝐫𝐬/𝐦𝐨𝐧𝐭𝐡. \n\n𝐂𝐨𝐧𝐭𝐚𝐜𝐭:- [@𝐈𝐫𝐟𝐚𝐧50786](https://t.me/Irfan50786)""",
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
@@ -98,8 +98,10 @@ async def private_receive_handler(c: Client, m: Message):
         log_msg = await m.forward(chat_id=Var.BIN_CHANNEL)
         stream_link = f"{Var.URL}watch/{str(log_msg.id)}/{quote_plus(get_name(log_msg))}?hash={get_hash(log_msg)}"
         online_link = f"{Var.URL}{str(log_msg.id)}/{quote_plus(get_name(log_msg))}?hash={get_hash(log_msg)}"
+        online_link2 = f"{Var.URL2}{str(log_msg.id)}/{quote_plus(get_name(log_msg))}?hash={get_hash(log_msg)}"
+        online_link3 = f"{Var.URL3}{str(log_msg.id)}/{quote_plus(get_name(log_msg))}?hash={get_hash(log_msg)}"
        
-        msg_text ="""<i><u>𝗬𝗼𝘂𝗿 𝗟𝗶𝗻𝗸 𝗚𝗲𝗻𝗲𝗿𝗮𝘁𝗲𝗱 !</u></i>\n\n<b>📂 Fɪʟᴇ ɴᴀᴍᴇ :</b> <i>{}</i>\n\n<b>📦 Fɪʟᴇ ꜱɪᴢᴇ :</b> <i>{}</i>\n\n<b>📥 Dᴏᴡɴʟᴏᴀᴅ :</b> <i>{}</i>\n\n<b> 🖥WATCH  :</b> <i>{}</i>\n\n<b>🚸 Nᴏᴛᴇ : LINK WILL NOT EXPIRE UNTIL I DELETE</b>"""
+        msg_text ="""<i><u>𝗬𝗼𝘂𝗿 𝗟𝗶𝗻𝗸 𝗚𝗲𝗻𝗲𝗿𝗮𝘁𝗲𝗱 !</u></i>\n\n<b>📂 Fɪʟᴇ ɴᴀᴍᴇ :</b> <i>{}</i>\n\n<b>📦 Fɪʟᴇ ꜱɪᴢᴇ :</b> <i>{}</i>\n\n<b>📥 Dᴏᴡɴʟᴏᴀᴅ 1 :</b> <i>{}</i>\n\n<b>📥 Dᴏᴡɴʟᴏᴀᴅ 2 :</b> <i>{online_link2}</i>\n\n<b>📥 Dᴏᴡɴʟᴏᴀᴅ 3 :</b> <i>{online_link3}</i>\n\n<b> 🖥WATCH  :</b> <i>{}</i>\n\n<b>🚸 Nᴏᴛᴇ : LINK WILL NOT EXPIRE UNTIL I DELETE</b>"""
 
         await log_msg.reply_text(text=f"**RᴇQᴜᴇꜱᴛᴇᴅ ʙʏ :** [{m.from_user.first_name}](tg://user?id={m.from_user.id})\n**Uꜱᴇʀ ɪᴅ :** `{m.from_user.id}`\n**Stream ʟɪɴᴋ :** {stream_link}", disable_web_page_preview=True,  quote=True)
         await m.reply_text(
