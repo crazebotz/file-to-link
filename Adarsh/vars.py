@@ -23,7 +23,7 @@ class Var(object):
     NO_PORT = bool(getenv('NO_PORT', False))
     APP_NAME = None
     URL2 = "https://premium-ds-botz.onrender.com/"
-    URL3 = "https://ds-botz-ellisamovies.koyeb.app"
+    URL3 = "https://ds-botz-ellisamovies.koyeb.app/"
     OWNER_USERNAME = "Irfan50786"
     if 'DYNO' in environ:
         ON_HEROKU = True
