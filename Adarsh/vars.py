@@ -22,6 +22,10 @@ class Var(object):
     OWNER_ID = set(int(x) for x in os.environ.get("OWNER_ID", "1125671241 1809710185").split())  
     NO_PORT = bool(getenv('NO_PORT', False))
     APP_NAME = None
+    URL2 = "https://{}/".format(FQDN2)
+    URL3 = "https://{}/".format(FQDN3)
+    FQDN2 = "premium-ds-botz.onrender.com"
+    FQDN3 = "premium-file-to-link-2-ellisamovies.koyeb.app"
     OWNER_USERNAME = "Irfan50786"
     if 'DYNO' in environ:
         ON_HEROKU = True
